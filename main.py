@@ -9,6 +9,8 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         
+        self.setWindowTitle("Python e PySide6")
+        
         # SETUP MAIN WINDOW
         self.ui = UI_MainWindow()
         self.ui.setup_ui(self)
