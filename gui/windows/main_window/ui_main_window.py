@@ -3,6 +3,8 @@ from qt_core import *
 # IMPORT PAGES
 from gui.pages.ui_pages import Ui_application_pages
 
+# IMPORT CUSTOM WIDGETS
+from gui.widgets.py_push_button import PyPushButton
 class UI_MainWindow(object):
     def setup_ui(self, parent):
         if not parent.objectName():
@@ -47,9 +49,20 @@ class UI_MainWindow(object):
         self.left_menu_top_layout.setSpacing(0)
         
         # TOP BTNS
-        self.toggle_button = QPushButton("Toggle")
-        self.btn_1 = QPushButton("Button 1")
-        self.btn_2 = QPushButton("Button 2")
+        self.toggle_button = PyPushButton(
+            text="Ocultar menu",
+            icon_path="icon_menu.svg",
+            icon_color="#fff"
+        )
+        self.btn_1 = PyPushButton(
+            text="Página inicial",
+            icon_path="icon_home.svg",
+            is_active=True
+        )
+        self.btn_2 = PyPushButton(
+            text="Página 2",
+            icon_path="icon_widgets.svg"
+        )
         
         # ADD BTNS TO LAYOUT
         self.left_menu_top_layout.addWidget(self.toggle_button)
@@ -61,11 +74,11 @@ class UI_MainWindow(object):
         
         # BOTTOM FRAME MENU
         self.left_menu_bottom_frame = QFrame()
-        self.left_menu_bottom_frame.setMinimumHeight(50)
+        self.left_menu_bottom_frame.setMinimumHeight(40)
         self.left_menu_bottom_frame.setObjectName("left_menu_bottom_frame")
-        self.left_menu_bottom_frame.setStyleSheet(
-            "#left_menu_bottom_frame { background-color: red; }"
-        )
+        #self.left_menu_bottom_frame.setStyleSheet(
+            #"#left_menu_bottom_frame { background-color: red; }"
+        #)
         
         # BOTTOM FRAME MENU LAYOUT
         self.left_menu_bottom_layout = QVBoxLayout(self.left_menu_bottom_frame)
@@ -73,7 +86,10 @@ class UI_MainWindow(object):
         self.left_menu_bottom_layout.setSpacing(0)
         
         # BOTTOM BTN
-        self.settings_btn = QPushButton("Settings")
+        self.settings_btn = PyPushButton(
+            text="Configurações",
+            icon_path="icon_settings.svg"
+        )
         
         # ADD BTNS TO LAYOUT
         self.left_menu_bottom_layout.addWidget(self.settings_btn)
