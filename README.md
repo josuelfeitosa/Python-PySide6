@@ -2,7 +2,7 @@
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/josuelfeitosa/python-pyside6/blob/main/LICENSE)
 
-> Status: Developing ⚠️
+> Status: Finished :white_check_mark:
 
 ### This repository contains a Python project using PySide6.
 
